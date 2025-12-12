@@ -81,7 +81,7 @@ const TopBar: React.FC<ITopBarProps> = ({ currentDojo }: ITopBarProps) => {
   }>({
     bottom: 0,
     left: 0,
-    width: '100%',
+    width: '100%'
   });
 
   const placeholderRef = useRef<HTMLDivElement | null>(null);
@@ -160,7 +160,7 @@ const TopBar: React.FC<ITopBarProps> = ({ currentDojo }: ITopBarProps) => {
       {/* Invisible placeholder to measure parent width/position */}
       <div
         ref={placeholderRef}
-        className="w-full h-0 opacity-0 pointer-events-none"
+        className='w-full h-0 opacity-0 pointer-events-none'
       />
 
       <AnimatePresence>
@@ -179,8 +179,9 @@ const TopBar: React.FC<ITopBarProps> = ({ currentDojo }: ITopBarProps) => {
               width:
                 typeof layout.width === 'number'
                   ? `${layout.width}px`
-                  : layout.width,
+                  : layout.width
             }}
+            id='main-top-bar'
             className={clsx(
               'fixed z-40',
               'bg-[var(--background-color)]',
@@ -212,7 +213,7 @@ const TopBar: React.FC<ITopBarProps> = ({ currentDojo }: ITopBarProps) => {
                   }}
                 >
                   <Timer size={20} />
-                  <span className="whitespace-nowrap">Blitz</span>
+                  <span className='whitespace-nowrap'>Blitz</span>
                 </button>
               )}
 
@@ -236,11 +237,8 @@ const TopBar: React.FC<ITopBarProps> = ({ currentDojo }: ITopBarProps) => {
                   setShowGameModesModal(true);
                 }}
               >
-                <span className="whitespace-nowrap">Train</span>
-                <Play
-                  className={clsx(isFilled && 'fill-current')}
-                  size={20}
-                />
+                <span className='whitespace-nowrap'>Train</span>
+                <Play className={clsx(isFilled && 'fill-current')} size={20} />
               </button>
             </div>
           </motion.div>
