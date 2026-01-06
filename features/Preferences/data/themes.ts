@@ -821,6 +821,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         backgroundColor: 'oklch(21.5% 0.041 230.0 / 1)', // airy night slate
         mainColor: 'oklch(94.0% 0.240 194.0 / 1)', // celestial turquoise
         secondaryColor: 'oklch(92.5% 0.153 284.0 / 1)' // dreamlike pale periwinkle
+      },
+      {
+        id: 'shirafuji',
+        backgroundColor: 'oklch(18.5% 0.042 306.0 / 1)',  // lunar wisteria
+        mainColor: 'oklch(96.0% 0.125 290.0 / 1)',        // pale blue-lavender
+        secondaryColor: 'oklch(98.0% 0.118 111.0 / 1)',   // icy yellow-white
       }
     ]
   },
