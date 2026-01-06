@@ -5,7 +5,7 @@
  * It uses a cache-first strategy for audio files.
  */
 
-const AUDIO_CACHE_NAME = 'audio-cache-v1';
+const AUDIO_CACHE_NAME = 'audio-cache-v2';
 
 // Audio files to precache (Opus format - widely supported)
 // Note: mariah-carey.opus (2.9MB) is NOT pre-cached to reduce initial load

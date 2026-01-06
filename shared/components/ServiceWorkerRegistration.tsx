@@ -11,22 +11,39 @@ export default function ServiceWorkerRegistration() {
     if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
       // Register service worker after page load to not block initial render
       window.addEventListener('load', () => {
-        navigator.serviceWorker
-          .register('/sw.js')
-          .then(registration => {
-            console.log('Audio SW registered:', registration.scope);
+        const register = async () => {
+          try {
+            const registrations =
+              await navigator.serviceWorker.getRegistrations();
 
-            // Check for updates periodically
+            await Promise.all(
+              registrations
+                .filter(reg => reg.active?.scriptURL.endsWith('/sw.js'))
+                .filter(reg => new URL(reg.scope).pathname === '/')
+                .map(reg => reg.unregister())
+            );
+
+            const registration = await navigator.serviceWorker.register(
+              '/sw.js',
+              {
+                scope: '/sounds/'
+              }
+            );
+
+            console.warn('Audio SW registered:', registration.scope);
+
             setInterval(
               () => {
                 registration.update();
               },
               60 * 60 * 1000
-            ); // Check every hour
-          })
-          .catch(error => {
+            );
+          } catch (error) {
             console.warn('Audio SW registration failed:', error);
-          });
+          }
+        };
+
+        void register();
       });
     }
   }, []);

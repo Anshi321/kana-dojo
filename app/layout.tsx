@@ -9,6 +9,7 @@ import {
   kanaDojoSchema
 } from '@/shared/components/SEO/StructuredData';
 import { Metadata, Viewport } from 'next';
+import Script from 'next/script';
 
 const googleVerificationToken = process.env.GOOGLE_VERIFICATION_TOKEN || '';
 const msVerificationToken = process.env.MS_VERIFICATION_TOKEN || '';
@@ -124,6 +125,30 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang='en' suppressHydrationWarning>
       <head>
         <StructuredData data={kanaDojoSchema} />
+        <Script id='audio-sw-migration' strategy='beforeInteractive'>
+          {`try {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+      .getRegistrations()
+      .then(function (registrations) {
+        return Promise.all(
+          registrations
+            .filter(function (reg) {
+              return (
+                reg.active &&
+                reg.active.scriptURL.endsWith('/sw.js') &&
+                new URL(reg.scope).pathname === '/'
+              );
+            })
+            .map(function (reg) {
+              return reg.unregister();
+            })
+        );
+      })
+      .catch(function () {});
+  }
+} catch (_) {}`}
+        </Script>
         {/* DNS prefetch for external domains - resolve DNS early */}
         <link rel='dns-prefetch' href='https://www.googletagmanager.com' />
         <link rel='dns-prefetch' href='https://www.clarity.ms' />
