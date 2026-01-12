@@ -259,12 +259,7 @@ const baseThemeSets: BaseThemeGroup[] = [
         mainColor: 'oklch(90.4% 0.216 274.7 / 1)',
         secondaryColor: 'oklch(92.6% 0.173 338.0 / 1)'
       },
-      {
-        id: 'kumonasu',
-        backgroundColor: 'oklch(19.0% 0.043 302.0 / 1)',
-        mainColor: 'oklch(93.0% 0.165 265.0 / 1)',
-        secondaryColor: 'oklch(92.0% 0.140 200.0 / 1)'
-      },
+
       {
         id: 'kuromizu',
         backgroundColor: 'oklch(10.6% 0.034 248.0 / 1)',
