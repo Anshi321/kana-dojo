@@ -68,18 +68,8 @@ const DEMO_KANJI = [
   { kanji: '月', meaning: 'moon', reading: 'tsuki' },
   { kanji: '木', meaning: 'tree', reading: 'ki' },
   { kanji: '口', meaning: 'mouth', reading: 'kuchi' },
-  // 10 additional super simple kanji (1-4 strokes)
   { kanji: '人', meaning: 'person', reading: 'hito' },
-  { kanji: '入', meaning: 'enter', reading: 'iru' },
-  { kanji: '上', meaning: 'up', reading: 'ue' },
-  { kanji: '下', meaning: 'down', reading: 'shita' },
-  { kanji: '八', meaning: 'eight', reading: 'hachi' },
-  { kanji: '十', meaning: 'ten', reading: 'jū' },
-  { kanji: '九', meaning: 'nine', reading: 'kyū' },
-  { kanji: '七', meaning: 'seven', reading: 'nana' },
-  { kanji: '六', meaning: 'six', reading: 'roku' },
   { kanji: '五', meaning: 'five', reading: 'go' },
-  // 8 pictographic kanji for visual learning
   { kanji: '雨', meaning: 'rain', reading: 'ame' },
   { kanji: '田', meaning: 'field', reading: 'ta' },
   { kanji: '猫', meaning: 'cat', reading: 'neko' },
@@ -90,20 +80,6 @@ const DEMO_KANJI = [
   { kanji: '女', meaning: 'woman', reading: 'onna' },
 ];
 
-// Simple Vocabulary: 10 easy, practical Japanese words
-// Commented out for now - focusing on kana and kanji only
-// const DEMO_VOCAB = [
-//   { word: 'はい', reading: 'hai', meaning: 'yes' },
-//   { word: 'いいえ', reading: 'iie', meaning: 'no' },
-//   { word: 'ねこ', reading: 'neko', meaning: 'cat' },
-//   { word: 'いぬ', reading: 'inu', meaning: 'dog' },
-//   { word: 'みず', reading: 'mizu', meaning: 'water' },
-//   { word: 'ひ', reading: 'hi', meaning: 'fire' },
-//   { word: 'て', reading: 'te', meaning: 'hand' },
-//   { word: 'め', reading: 'me', meaning: 'eye' },
-//   { word: 'あし', reading: 'ashi', meaning: 'foot' },
-//   { word: 'くち', reading: 'kuchi', meaning: 'mouth' },
-// ];
 
 type QuestionType = 'kana' | 'kanji'; // | 'vocab' - vocab commented out for now
 

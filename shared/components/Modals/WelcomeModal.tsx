@@ -387,86 +387,122 @@ const WelcomeModal = () => {
             </div>
 
             <div className='max-h-96 space-y-6 overflow-y-auto px-1'>
-              {themeSets.map(themeSet => (
-                <div key={themeSet.name} className='space-y-3'>
-                  <div className='flex items-center gap-2 text-lg font-medium text-[var(--main-color)]'>
-                    <themeSet.icon size={20} />
-                    {themeSet.name}
-                    {/* <span className='text-sm font-normal text-[var(--secondary-color)]'>
+              {themeSets
+                .filter(
+                  themeSet =>
+                    themeSet.name === 'Base' || themeSet.name === 'Dark',
+                )
+                .map(themeSet => {
+                  let filteredThemes = themeSet.themes;
+
+                  // Only filter Dark themes - show all Base themes
+                  if (themeSet.name === 'Dark') {
+                    const allowedThemes = [
+                      'taikan',
+                      'monkeytype',
+                      'nord',
+                      'yukata',
+                      'dusk-voyager',
+                      'fuji',
+                      'moonlit-waterfall',
+                      'luminous-tide',
+                      'sapphire-bloom',
+                      'oboro',
+                      'midnight-fjord'
+                      ,'coral-abyss'
+                    ,'sangosabi'
+                    ];
+                    filteredThemes = themeSet.themes.filter(theme =>
+                      allowedThemes.includes(theme.id),
+                    );
+                  }
+
+                  // Don't render the theme group if it has no themes to display
+                  if (filteredThemes.length === 0) return null;
+
+                  return (
+                    <div key={themeSet.name} className='space-y-3'>
+                      <div className='flex items-center gap-2 text-lg font-medium text-[var(--main-color)]'>
+                        <themeSet.icon size={20} />
+                        {themeSet.name}
+                        {/* <span className='text-sm font-normal text-[var(--secondary-color)]'>
                       ({themeSet.themes.length})
                     </span> */}
-                  </div>
-                  <div className='grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4'>
-                    {themeSet.themes.map(theme => {
-                      const isChaosTheme = theme.id === '?';
-                      const background = isChaosTheme
-                        ? CHAOS_THEME_GRADIENT
-                        : theme.backgroundColor;
-                      return (
-                        <button
-                          key={theme.id}
-                          className='cursor-pointer rounded-lg p-3 transition-all duration-200 hover:opacity-90 active:scale-95'
-                          style={{
-                            background,
-                            border:
-                              localTheme === theme.id
-                                ? `1px solid ${theme.mainColor}`
-                                : `1px solid ${theme.borderColor}`,
-                          }}
-                          onClick={() => {
-                            playClick();
-                            setLocalTheme(theme.id);
-                            setSelectedTheme(theme.id);
-                          }}
-                          title={theme.id}
-                        >
-                          <div className='mb-2 text-left'>
-                            {isChaosTheme ? (
-                              <span className='relative flex items-center justify-start text-sm text-white capitalize'>
-                                <span
-                                  className='absolute left-0'
-                                  style={{
-                                    color:
-                                      localTheme === theme.id
-                                        ? '#000'
-                                        : 'transparent',
-                                  }}
-                                >
-                                  {'\u2B24'}
-                                </span>
-                                <span className='opacity-0'>?</span>
-                              </span>
-                            ) : (
-                              <span
-                                className='text-sm capitalize'
-                                style={{ color: theme.mainColor }}
+                      </div>
+                      <div className='grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4'>
+                        {filteredThemes.map(theme => {
+                          const isChaosTheme = theme.id === '?';
+                          const background = isChaosTheme
+                            ? CHAOS_THEME_GRADIENT
+                            : theme.backgroundColor;
+                          return (
+                            <button
+                              key={theme.id}
+                              className='cursor-pointer rounded-lg p-3 transition-all duration-200 hover:opacity-90 active:scale-95'
+                              style={{
+                                background,
+                                border:
+                                  localTheme === theme.id
+                                    ? `1px solid ${theme.mainColor}`
+                                    : `1px solid ${theme.borderColor}`,
+                              }}
+                              onClick={() => {
+                                playClick();
+                                setLocalTheme(theme.id);
+                                setSelectedTheme(theme.id);
+                              }}
+                              title={theme.id}
+                            >
+                              <div className='mb-2 text-left'>
+                                {isChaosTheme ? (
+                                  <span className='relative flex items-center justify-start text-sm text-white capitalize'>
+                                    <span
+                                      className='absolute left-0'
+                                      style={{
+                                        color:
+                                          localTheme === theme.id
+                                            ? '#000'
+                                            : 'transparent',
+                                      }}
+                                    >
+                                      {'\u2B24'}
+                                    </span>
+                                    <span className='opacity-0'>?</span>
+                                  </span>
+                                ) : (
+                                  <span
+                                    className='text-sm capitalize'
+                                    style={{ color: theme.mainColor }}
+                                  >
+                                    {localTheme === theme.id && '\u2B24 '}
+                                    {theme.id.replaceAll('-', ' ')}
+                                  </span>
+                                )}
+                              </div>
+                              <div
+                                className='flex gap-1.5'
+                                style={{
+                                  visibility: isChaosTheme
+                                    ? 'hidden'
+                                    : 'visible',
+                                }}
                               >
-                                {localTheme === theme.id && '\u2B24 '}
-                                {theme.id.replaceAll('-', ' ')}
-                              </span>
-                            )}
-                          </div>
-                          <div
-                            className='flex gap-1.5'
-                            style={{
-                              visibility: isChaosTheme ? 'hidden' : 'visible',
-                            }}
-                          >
-                            <div
-                              className='h-4 w-4 rounded-full'
-                              style={{ background: theme.mainColor }}
-                            />
-                            <div
-                              className='h-4 w-4 rounded-full'
-                              style={{ background: theme.secondaryColor }}
-                            />
-                          </div>
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
-              ))}
+                                <div
+                                  className='h-4 w-4 rounded-full'
+                                  style={{ background: theme.mainColor }}
+                                />
+                                <div
+                                  className='h-4 w-4 rounded-full'
+                                  style={{ background: theme.secondaryColor }}
+                                />
+                              </div>
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  );
+                })}
             </div>
           </div>
         );
