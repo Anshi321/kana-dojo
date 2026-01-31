@@ -6,6 +6,8 @@
 
 ![KanaDojo Banner](https://github.com/user-attachments/assets/56716ee9-9347-4224-9fe2-ef1beb93e286)
 
+![Training](https://github.com/user-attachments/assets/d491708f-2ad3-41c7-9717-dec8a90afd03)
+
 **An aesthetic, minimalist and highly customizable platform for mastering Japanese inspired by Monkeytype**
 
 [![Live Demo](https://img.shields.io/badge/demo-kanadojo.com-blue?style=for-the-badge)](https://kanadojo.com)
@@ -75,15 +77,14 @@ npm run check
 
 > **Having issues?** See the [Troubleshooting Guide](./docs/TROUBLESHOOTING.md)
 
+<!--
 ## Screenshots
 
 <div align="center">
 
 ### Home Page
 
-<!--
 ![Home](https://github.com/user-attachments/assets/cac78e72-4d31-43e8-8160-104c431e55be)
--->
 
 ### Training Screen
 
@@ -94,6 +95,7 @@ npm run check
 ![Themes](https://github.com/user-attachments/assets/f664a280-0344-4ff9-8639-83f9c1c4223b)
 
 </div>
+-->
 
 ## Documentation
 

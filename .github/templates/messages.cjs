@@ -247,7 +247,7 @@ module.exports = {
         '[Good First Issue] {emoji} Add New Color Theme: {name} (good-first-issue)',
       header: '## 🎨 Add New Color Theme: "{name}"',
       category: 'Community Contribution - Theme',
-      estimatedTime: '1 minute (good-first-issue!)',
+      estimatedTime: '<1 min',
       taskDescription: 'Add this beautiful new theme to KanaDojo!',
       detailsHeader: '### Theme Details',
       vibeLabel: '💡 **Vibe:**',
@@ -263,7 +263,7 @@ module.exports = {
         '[Good First Issue] {emoji} Add Interesting, Cultural Fact about Japan {id} (good-first-issue)',
       header: '## 🎋 Add New Japan Fact',
       category: 'Community Contribution - Fun Fact',
-      estimatedTime: '1 minute (good-first-issue!)',
+      estimatedTime: '<1 min',
       taskDescription:
         'Add this interesting fact about Japan to our collection!',
       factHeader: '### The Fact',
@@ -277,7 +277,7 @@ module.exports = {
         '[Good First Issue] {emoji} Add New Japanese Proverb {id} (good-first-issue)',
       header: '## 🎌 Add Japanese Proverb (ことわざ)',
       category: 'Community Contribution - Proverb',
-      estimatedTime: '1 minute (good-first-issue!)',
+      estimatedTime: '<1 min',
       taskDescription:
         'Add this traditional Japanese proverb to help learners understand Japanese wisdom!',
       proverbHeader: '### The Proverb',
@@ -290,7 +290,7 @@ module.exports = {
         '[Good First Issue] {emoji} Add New Trivia Question {id} (good-first-issue)',
       header: '## 🧠 Add New Trivia Question',
       category: 'Community Contribution - Trivia',
-      estimatedTime: '2 minutes (good-first-issue!)',
+      estimatedTime: '<1 min',
       taskDescription: 'Add this trivia question to our growing quiz bank!',
       triviaHeader: '### The Trivia Question',
       // Trivia uses dynamic file path: data/community-content/{difficultyFile}
@@ -303,7 +303,7 @@ module.exports = {
         '[Good First Issue] {emoji} Add New Grammar Point {id} (good-first-issue)',
       header: '## 📖 Add New Grammar Point',
       category: 'Community Contribution - Grammar',
-      estimatedTime: '2 minutes (good-first-issue!)',
+      estimatedTime: '<1 min',
       taskDescription:
         'Add this grammar explanation to our learner-friendly grammar list!',
       grammarHeader: '### The Grammar Point',
@@ -316,7 +316,7 @@ module.exports = {
         '[Good First Issue] {emoji} Add Famous Anime Quote #{id} (good-first-issue)',
       header: '## 🎬 Add Famous Anime Quote',
       category: 'Community Contribution - Anime Quote',
-      estimatedTime: '2 minutes (good-first-issue!)',
+      estimatedTime: '<1 min',
       taskDescription:
         'Add this iconic anime quote so learners can enjoy Japanese pop culture!',
       quoteHeader: '### The Quote',
