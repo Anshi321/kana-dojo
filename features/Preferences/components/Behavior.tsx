@@ -258,9 +258,9 @@ const Behavior = () => {
         </button>
       </div>
 
-      {pronunciationEnabled && (
+      {/* {pronunciationEnabled && (
         <>
-          {/* <h4 className='text-lg'>Pronunciation speed:</h4>
+          <h4 className='text-lg'>Pronunciation speed:</h4>
           <div className='flex flex-col gap-2'>
             <input
               type='range'
@@ -274,9 +274,9 @@ const Behavior = () => {
             <div className='text-center text-sm text-(--secondary-color)'>
               {pronunciationSpeed}x
             </div>
-          </div> */}
+          </div>
 
-          {/* <h4 className='text-lg'>Pronunciation pitch:</h4>
+          <h4 className='text-lg'>Pronunciation pitch:</h4>
           <div className='flex flex-col gap-2'>
             <input
               type='range'
@@ -290,9 +290,9 @@ const Behavior = () => {
             <div className='text-center text-sm text-(--secondary-color)'>
               {pronunciationPitch}x
             </div>
-          </div> */}
+          </div>
 
-          {/* <h4 className='text-lg'>Pronunciation voice:</h4>
+          <h4 className='text-lg'>Pronunciation voice:</h4>
           <div className='flex flex-col gap-2'>
             <div className='flex items-center gap-2'>
               <select
@@ -514,9 +514,8 @@ const Behavior = () => {
             )}
           </div>
         </>
-      )}
-      {/* 
-      <h4 className='text-lg'>Enable theme preview on hover:</h4>
+      )} */}
+      {/* <h4 className='text-lg'>Enable theme preview on hover:</h4>
       <div className='flex flex-row gap-4'>
         <button
           className={clsx(
@@ -561,8 +560,7 @@ const Behavior = () => {
           </span>
         </button>
       </div>
- */}
-      {/*       <h4 className="text-lg">Enable hotkeys (desktop only):</h4>
+      <h4 className="text-lg">Enable hotkeys (desktop only):</h4>
       <div className="flex flex-row gap-4">
         <button
           className={clsx(
@@ -613,7 +611,8 @@ const Behavior = () => {
           />
         </button>
       </div>
-      <HotkeyReference hotkeys={hotkeys} /> */}
+      <HotkeyReference hotkeys={hotkeys} />
+ */}
     </div>
   );
 };
